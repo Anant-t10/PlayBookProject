@@ -1,0 +1,42 @@
+.header {
+    background-color: #f4f6f9;
+    padding: 20px;
+}
+
+.global-nav {
+    display: flex;
+    justify-content: space-between; /* Align items at the ends of the container */
+    align-items: center; /* Center items vertically */
+}
+
+.left-section a{
+    /* Styles for the left section (logo or Home link) */
+    text-decoration: none;
+    color: hsl(130, 62%, 32%);
+    font-weight: bold;
+}
+
+.right-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.right-section ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.right-section ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.right-section ul li a:hover {
+    color: #0070d2; /* Change color on hover */
+}
+
+.left-section a:hover {
+    color: #0070d2; /* Change color on hover */
+}

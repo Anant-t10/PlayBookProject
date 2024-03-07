@@ -1,0 +1,65 @@
+<template>
+    <lightning-modal-header label="Book the Turf"></lightning-modal-header>
+    <lightning-modal-body>
+        Search Date :
+        <lightning-formatted-date-time
+            value={_screenData.searchDate}
+            day="2-digit"
+            month="2-digit"
+            year="numeric"
+        ></lightning-formatted-date-time>
+        <br />
+        Search Start Time :
+        <lightning-formatted-time value={_screenData.searchStartTime}></lightning-formatted-time>
+        <br />
+
+        Search End Time :
+        <lightning-formatted-time value={_screenData.searchEndTime}></lightning-formatted-time>
+        <br />
+
+        <div class="slds-p-around_medium">
+            <lightning-input
+                type="text"
+                label="Enter Name:"
+                placeholder="enter your name here"
+                required
+                value={name}
+                onchange={handleChange}
+                data-name="name"
+            ></lightning-input>
+        </div>
+
+        <div class="slds-p-horizontal_medium">
+            <lightning-input
+                type="email"
+                label="Enter Your Email:"
+                placeholder="enter your email here"
+                required
+                value={email}
+                onchange={handleChange}
+                data-name="email"
+            ></lightning-input>
+        </div>
+        <div class="slds-p-horizontal_medium">
+            <lightning-input
+                type="phone"
+                label="Enter Your Phone:"
+                placeholder="enter your phone here"
+                required
+                value={phone}
+                onchange={handleChange}
+                data-name="phone"
+            ></lightning-input>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-layout horizontal-align="end">
+            <lightning-layout-item padding="horizontal-small">
+                <lightning-button label="Cancel" onclick={handleOkay}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="horizontal-small">
+                <lightning-button label="Book" variant="brand" onclick={handleBooking}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-modal-footer>
+</template>

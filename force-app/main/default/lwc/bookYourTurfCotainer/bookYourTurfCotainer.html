@@ -1,0 +1,48 @@
+<template>
+    <div class="slds-m-vertical_medium marginHorizontalAuto">
+        <lightning-layout horizontal-align="center" multiple-rows>
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="date"
+                    data-name="searchDate"
+                    name="searchDate"
+                    label="Enter a date"
+                    value={searchDate}
+                    onchange={handleChange}
+                ></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="time"
+                    data-name="searchStartTime"
+                    name="searchStartTime"
+                    label="Enter a Start Time"
+                    value={searchStartTime}
+                    onchange={handleChange}
+                ></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="time"
+                    data-name="searchEndTime"
+                    name="searchEndTime"
+                    label="Enter a End Time"
+                    value={searchEndTime}
+                    onchange={handleChange}
+                ></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button variant="brand" label="Search" onclick={searchTurfFromDB}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout multiple-rows>
+                    <template for:each={searchResultTurfs} for:item="eachTurf">
+                        <lightning-layout-item padding="around-small" size="4" key={eachTurf.Id}>
+                            <c-book-turf-card turf-obj={eachTurf}></c-book-turf-card>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

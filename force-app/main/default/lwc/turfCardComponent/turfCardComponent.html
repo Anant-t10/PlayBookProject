@@ -1,0 +1,23 @@
+<template>
+  <lightning-card icon-name="standard:account" variant="base">
+    <div class="slds-p-horizontal_x-small">
+      <lightning-formatted-rich-text value={turfData.Turf_Photo1__c}></lightning-formatted-rich-text>
+    </div>
+    <div slot="title">{turfData.Name}</div>
+    <div class="slds-p-around_medium">
+      <div class="slds-grid">
+        <div class="slds-col">
+            <p>Address:</p>
+            <p>Price per hour:</p>
+            <p>Area:</p>
+        </div>
+        <div class="slds-col slds-p-horizontal_x-small">
+            <p>{turfData.Address__c}</p>
+            <p>{turfData.Price_per_hour__c}</p>
+            <p>{turfData.Area_in_metre_square__c} square foot</p>
+        </div>
+    </div>
+    </div>
+    <div slot="footer"></div>
+  </lightning-card>
+</template>

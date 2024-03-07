@@ -1,0 +1,34 @@
+<template>
+    <template lwc:if={turfObj}>
+        <lightning-card icon-name="standard:account" variant="base">
+            <div slot="title">{turfObj.Name}</div>
+            <div slot="actions">
+                <lightning-button
+                    variant="brand"
+                    label="Book"
+                    title="Book"
+                    onclick={handleBookButton}
+                ></lightning-button>
+            </div>
+            <div slot="footer"></div>
+            <div class="slds-p-horizontal_x-small">
+                <lightning-formatted-rich-text value={turfObj.Turf_Photo1__c}></lightning-formatted-rich-text>
+            </div>
+            <div class="slds-p-around_x-small">
+                <!-- Card Body  -->
+                <div class="slds-grid">
+                    <div class="slds-col">
+                        <p>Address:</p>
+                        <p>Price per hour:</p>
+                        <p>Area:</p>
+                    </div>
+                    <div class="slds-col slds-p-horizontal_x-small">
+                        <p>{turfObj.Address__c}</p>
+                        <p>{turfObj.Price_per_hour__c}</p>
+                        <p>{turfObj.Area_in_metre_square__c} square foot</p>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+</template>
